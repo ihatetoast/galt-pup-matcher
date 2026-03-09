@@ -1,0 +1,78 @@
+.card {
+  background: white;
+  border-radius: 11px;
+  padding: 15px 17px;
+  border: 2px solid #e8e0d8;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.18s;
+}
+
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px var(--shadow); }
+.card.strong { border-color: #3a7d52; }
+.card.good   { border-color: #b8860b; }
+.card.weak   { border-color: #c07060; }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+}
+
+.status {
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sApproved  { background: #d4edda; color: #1a5c2a; }
+.sSubmitted { background: #d1ecf1; color: #0a4a5a; }
+.sReference { background: #fff3cd; color: #7a5000; }
+.sWaiting   { background: #fde8e8; color: #7a2020; }
+.sOther     { background: #ede9fe; color: #4a2090; }
+
+.location { font-size: 0.76rem; color: var(--bark); margin-bottom: 7px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 8px; }
+
+.scoreWrap { margin-bottom: 5px; }
+.scoreBar  { height: 5px; background: #eee; border-radius: 3px; overflow: hidden; margin-bottom: 3px; }
+.scoreFill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+
+.sfStrong { background: var(--green); }
+.sfGood   { background: var(--gold); }
+.sfWeak   { background: #d06050; }
+
+.scoreMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.prefs { font-size: 0.74rem; color: #666; margin-bottom: 5px; }
+
+.reasons { font-size: 0.72rem; margin-top: 5px; display: flex; flex-direction: column; gap: 2px; }
+.rGood { color: var(--green); }
+.rBad  { color: var(--red); }
+
+.note {
+  background: var(--warm);
+  border-radius: 6px;
+  padding: 6px 9px;
+  margin-top: 7px;
+  font-size: 0.74rem;
+  color: var(--bark);
+  font-style: italic;
+  border-left: 2px solid var(--tan);
+  line-height: 1.4;
+}

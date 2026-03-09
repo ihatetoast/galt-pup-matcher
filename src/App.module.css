@@ -1,0 +1,38 @@
+.app { min-height: 100vh; }
+
+.header {
+  background: var(--deep);
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.35);
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--tan);
+}
+
+.subtitle { font-size: 0.78rem; color: #8a6a50; margin-top: 1px; }
+
+.pills { margin-left: auto; display: flex; gap: 10px; }
+
+.pill {
+  background: var(--bark);
+  color: var(--tan);
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 68px);
+}
