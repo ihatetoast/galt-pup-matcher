@@ -41,6 +41,9 @@
   height: 65vh;
   gap: 14px;
   opacity: 0.55;
+      width: 80%;
+      max-width: 500px;
+      margin: 0 auto;
 }
 
 .emptyIcon { font-size: 3.5rem; }
@@ -50,4 +53,16 @@
   color: var(--bark);
   text-align: center;
   line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

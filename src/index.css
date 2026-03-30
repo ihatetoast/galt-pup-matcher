@@ -7,11 +7,16 @@
   --rust: #b85c2a;
   --deep: #2c1a0e;
   --bark: #6b3f1f;
-  --green: #3a7d52;
+  --green: #1e5c30;
+  --light-green: #d4edda;
   --gold: #b8860b;
+  --dark-gold: #6d5000;
+  --light-yellow: #fff3cd;
   --red: #b83232;
   --light-rust: #f5e8dc;
   --shadow: rgba(44,26,14,0.1);
+  --grey: #666666;
+  --medium-grey: #888888;
   --blue: #2a6496;
 }
 

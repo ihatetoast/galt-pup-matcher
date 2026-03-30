@@ -26,3 +26,4 @@ dist-ssr
 # Data files
 *.csv
 *.numbers
+*.xlsx

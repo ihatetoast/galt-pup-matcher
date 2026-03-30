@@ -21,9 +21,20 @@ export default function ApplicantGrid({ dog, applicants }: Props) {
         <div className={styles.empty}>
           <div className={styles.emptyIcon}>🐕</div>
           <p className={styles.emptyText}>
-            Select a dog from the left panel
-            <br />
-            to view matched applicants
+            Welcome to Pup Matcher. <br />
+            This tool helps GALT coordinators match available greyhounds with
+            adoption applicants using a compatibility scoring system.
+          </p>
+          <p className={styles.emptyText}>
+            Demo mode is loaded by default using seed data, so you can see how
+            the Pup Matcher works.
+          </p>
+          <p className={styles.emptyText}>
+            To use it with real data, upload your current Dogs and Applications
+            spreadsheets using the buttons in the lower left panel. Your data
+            never leaves your browser. Nothing is saved, stored, or sent
+            anywhere — uploaded spreadsheets exist only in your current session
+            and are gone when you close or refresh the page.
           </p>
         </div>
       </div>

@@ -5,7 +5,19 @@
   font-weight: 600;
 }
 
-.yes    { background: #d4edda; color: #1e5c30; }
-.no     { background: #fde8e8; color: #8b2020; }
-.maybe  { background: #fff3cd; color: #6d5000; }
-.neutral{ background: #ececec; color: #666; }
+.yes {
+  background: var(--light-green);
+  color: var(--green);
+}
+.no {
+  background: var(--light-rust);
+  color: var(--red);
+}
+.maybe {
+  background: var(--light-yellow);
+  color: var(--dark-gold);
+}
+.neutral {
+  background: var(--warm);
+  color: var(--grey);
+}
