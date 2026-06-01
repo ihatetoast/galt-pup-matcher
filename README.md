@@ -22,16 +22,15 @@ Expected columns (order doesn't matter, headers are matched by keyword):
 |---|---|
 | Hound | Dog's name |
 | Sex | M or F |
+| eyes on | applicant's name |
 | Age | Number |
 | Location | City |
 | Foster | Foster's name |
-| Only | yes / no / must be |
+| Only | yes / no  | blank |
 | Needs Less Time Away | yes (or blank) |
-| High Fence? | yes (or blank) |
 | Experienced Only | yes (or blank) |
-| Kids? | yes / no (or blank for unknown) |
-| Cats? | yes / no (or blank for unknown) |
-| Small Dogs? | yes / no / maybe (or blank) |
+| Cats | yes / no (or blank for unknown) |
+| Small Dogs? | yes / no  (or blank) |
 | Apt? | yes / no (or blank for unknown) |
 | Stairs? | yes / no (or blank for unknown) |
 | Possible Matches | Applicant initials, comma-separated |
@@ -45,16 +44,17 @@ Expected columns:
 |---|---|
 | Coordinator | Coordinator name |
 | Submitted Date | Date |
-| Applicant Name | Initials or name |
+| First Name |  name |
+| Last Name |  name |
 | Status | Approved / Submitted / Reference Checking / Waiting / Under Review |
 | City | City |
 | State | State/province |
-| Cat (Y/N) | Y or N |
-| Small Dogs (Y/N) | Y or N |
-| Apt (Y/N) | Y or N |
-| Dog Count | Number of current dogs |
+| Cat  | Y or N |
+| Small Dogs  | Y or N |
+| Apt  | Y or N |
+| Only dog | / blank |
 | Kids | Y or N |
-| Stairs (Y/N) | Y or N |
+| Stairs  | Y or N |
 | Fence | Y or N |
 | Experience | Y or N |
 | GALT Adopter | Y or N |
@@ -70,9 +70,9 @@ Expected columns:
 Each applicant starts at 50 points. Points are added or subtracted based on compatibility. The final score is capped between 0 and 100.
 
 **Hard constraints** (large point swings):
-- Cats, small dogs, apartment, fence, stairs
-- Whether the dog needs to be an only dog or requires a canine companion
-- Kids, if the dog is known to be unsuitable
+- Early returns of 0 and also not shown (but could later, so are scored): cats, small dogs, only
+- apartment, fence, stairs
+
 
 **Soft bonuses:**
 - Applicant named the dog specifically in their notes

@@ -37,6 +37,7 @@
 .date {
   font-size: 0.7rem;
   color: #7a2020;
+  white-space: nowrap;
 }
 
 
@@ -45,6 +46,9 @@
 .sReference { background: #fff3cd; color: #7a5000; }
 .sWaiting   { background: #fde8e8; color: #7a2020; }
 .sOther     { background: #ede9fe; color: #4a2090; }
+.old     { color: var(--red); }
+.sitting { color: var(--gold); }
+.new     { color: var(--green); }
 
 .location { font-size: 0.76rem; color: var(--bark); margin-bottom: 7px; }
 
