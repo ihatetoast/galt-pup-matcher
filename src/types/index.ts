@@ -1,20 +1,20 @@
 // note: data needs to be mindful of case. if yes, then yes, not Yes
-export type OnlyDog = 'yes' | 'no' | 'mustbe' | null; // yes means can be and must be means ... must be. y
-export type YesNoMaybe = true | false | 'maybe' | null;
+export type OnlyDog = 'yes' | 'no'  | null; 
+export type YesNoMaybe = true | false | null;
 
 export interface Dog {
   name: string;
+  eyesOn: string;
   emoji: string;
   location: string;
   foster: string;
+  coordinator: string;
   sex: 'M' | 'F' | null;
   age: number | null;
-  only: OnlyDog; // has to be only. not good with others
-  needsLessTimeAway: boolean;  // true = dog needs someone home a lot
+  only: OnlyDog;
+  needsLessTimeAway: boolean;
   cats: boolean | null;
   smallDogs: YesNoMaybe;
-  kids: boolean | null;
-  highFence: boolean;
   apt: boolean | null
   stairs: boolean | null;
   experiencedOnly: boolean;
@@ -32,7 +32,7 @@ export interface Applicant {
   cats: boolean;
   smallDogs: boolean;
   apt: boolean;
-  dogCount: number;
+  onlyDog: boolean | null;
   kids: boolean;
   stairs: boolean | null;
   fence: boolean | null;
@@ -42,6 +42,7 @@ export interface Applicant {
   sexPref: string;
   agePref: string;
   notes: string;
+  dogPending: string;
 }
 
 export interface ScoredApplicant {

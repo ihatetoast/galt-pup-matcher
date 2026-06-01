@@ -35,16 +35,14 @@ export default function DogCard({ dog, applicants, isActive, onClick }: Props) {
         {dog.sex === "F" && <Tag type="neutral">♀ Female</Tag>}
         {dog.sex === "M" && <Tag type="neutral">♂ Male</Tag>}
         {dog.age != null && <Tag type="neutral">{dog.age} yr</Tag>}
-        {dog.only === "mustbe" && <Tag type="no">Must Be Only Dog</Tag>}
-        {dog.only === "no"     && <Tag type="yes">Needs Dog Companion</Tag>}
-        {dog.only === "yes"    && <Tag type="neutral">Can Be Only Dog</Tag>}
-        {dog.cats === true     && <Tag type="yes">Cats OK</Tag>}
-        {dog.cats === false    && <Tag type="no">No Cats</Tag>}
-        {dog.apt === false     && <Tag type="no">House Only</Tag>}
-        {dog.apt === true      && <Tag type="yes">Apt OK</Tag>}
-        {dog.smallDogs === true    && <Tag type="yes">Small Dogs OK</Tag>}
-        {dog.smallDogs === false   && <Tag type="no">No Small Dogs</Tag>}
-        {dog.smallDogs === "maybe" && <Tag type="maybe">Small Dogs?</Tag>}
+        {dog.only === "no"  && <Tag type="yes">Needs Dog Companion</Tag>}
+        {dog.only === "yes" && <Tag type="neutral">Can Be Only Dog</Tag>}
+        {dog.cats === true  && <Tag type="yes">Cats OK</Tag>}
+        {dog.cats === false && <Tag type="no">No Cats</Tag>}
+        {dog.apt === false  && <Tag type="no">House Only</Tag>}
+        {dog.apt === true   && <Tag type="yes">Apt OK</Tag>}
+        {dog.smallDogs === true  && <Tag type="yes">Small Dogs OK</Tag>}
+        {dog.smallDogs === false && <Tag type="no">No Small Dogs</Tag>}
       </div>
     </div>
   );

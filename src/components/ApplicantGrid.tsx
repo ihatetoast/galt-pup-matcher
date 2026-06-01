@@ -44,21 +44,26 @@ export default function ApplicantGrid({ dog, applicants }: Props) {
   // Filter applicants
   let filtered = applicants;
   if (statusFilter !== 'all') {
-    filtered = filtered.filter((a) =>
-      a.status.toLowerCase().includes(statusFilter),
+    filtered = filtered.filter(a =>
+      a.status.toLowerCase().includes(statusFilter)
     );
   }
   if (coordFilter !== 'all') {
-    filtered = filtered.filter((a) => a.coord === coordFilter);
+    filtered = filtered.filter(a => a.coord === coordFilter);
   }
 
-  // Score and sort
+  // Score, filter zeros (hard dealbreakers), sort by score desc
+  // tiebreaker: oldest application date first
   const scored: ScoredApplicant[] = filtered
-    .map((a) => score(dog, a))
-    .sort((a, b) => b.pts - a.pts);
+    .map(a => score(dog, a))
+    .filter(s => s.pts > 0)
+    .sort((a, b) => {
+      if (b.pts !== a.pts) return b.pts - a.pts;
+      return new Date(a.applicant.date).getTime() - new Date(b.applicant.date).getTime();
+    });
 
   // Derive coordinator list from all applicants (not filtered)
-  const coordinators = [...new Set(applicants.map((a) => a.coord))].sort();
+  const coordinators = [...new Set(applicants.map(a => a.coord))].sort();
 
   return (
     <div className={styles.panel}>
@@ -83,8 +88,11 @@ export default function ApplicantGrid({ dog, applicants }: Props) {
         </div>
       ) : (
         <div className={styles.grid}>
-          {scored.map((s) => (
-            <ApplicantCard key={s.applicant.name} scored={s} />
+          {scored.map(s => (
+            <ApplicantCard
+              key={`${s.applicant.name}-${s.applicant.date}`}
+              scored={s}
+            />
           ))}
         </div>
       )}

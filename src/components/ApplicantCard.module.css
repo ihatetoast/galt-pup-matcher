@@ -34,6 +34,12 @@
   white-space: nowrap;
 }
 
+.date {
+  font-size: 0.7rem;
+  color: #7a2020;
+}
+
+
 .sApproved  { background: #d4edda; color: #1a5c2a; }
 .sSubmitted { background: #d1ecf1; color: #0a4a5a; }
 .sReference { background: #fff3cd; color: #7a5000; }

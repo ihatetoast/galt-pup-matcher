@@ -15,6 +15,7 @@ export default function DogProfile({ dog }: Props) {
         <div className={styles.name}>{dog.name}</div>
         <div className={styles.sub}>
           📍 {dog.location} &nbsp;·&nbsp; Foster: {dog.foster}
+          {dog.coordinator && <>&nbsp;·&nbsp; AC: {dog.coordinator}</>}
         </div>
 
         <div className={styles.tags}>
@@ -25,28 +26,21 @@ export default function DogProfile({ dog }: Props) {
               {dog.age} yr · {dogAgeCategory(dog.age)[0]}
             </Tag>
           )}
-          {dog.only === 'mustbe' && <Tag type='no'>Must Be Only Dog</Tag>}
-          {dog.only === 'no' && <Tag type='yes'>Needs Dog Companion</Tag>}
+          {dog.only === 'no'  && <Tag type='yes'>Needs Dog Companion</Tag>}
           {dog.only === 'yes' && <Tag type='neutral'>Can Be Only Dog</Tag>}
-          {dog.cats === true && <Tag type='yes'>Cats OK</Tag>}
+          {dog.cats === true  && <Tag type='yes'>Cats OK</Tag>}
           {dog.cats === false && <Tag type='no'>No Cats</Tag>}
-          {dog.apt === false && <Tag type='no'>House Only</Tag>}
-          {dog.apt === true && <Tag type='yes'>Apt OK</Tag>}
-          {dog.apt === null && <Tag type='neutral'>Apt Unknown</Tag>}
-          {dog.smallDogs === true && <Tag type='yes'>Small Dogs OK</Tag>}
+          {dog.cats === null  && <Tag type='neutral'>Cats Unknown</Tag>}
+          {dog.apt === false  && <Tag type='no'>House Only</Tag>}
+          {dog.apt === true   && <Tag type='yes'>Apt OK</Tag>}
+          {dog.apt === null   && <Tag type='neutral'>Apt Unknown</Tag>}
+          {dog.smallDogs === true  && <Tag type='yes'>Small Dogs OK</Tag>}
           {dog.smallDogs === false && <Tag type='no'>No Small Dogs</Tag>}
-          {dog.smallDogs === 'maybe' && (
-            <Tag type='maybe'>Small Dogs Cautious</Tag>
-          )}
-          {dog.stairs === true && <Tag type='yes'>Stairs OK</Tag>}
+          {dog.smallDogs === null  && <Tag type='neutral'>Small Dogs Unknown</Tag>}
+          {dog.stairs === true  && <Tag type='yes'>Stairs OK</Tag>}
           {dog.stairs === false && <Tag type='no'>No Stairs</Tag>}
-          {dog.highFence && <Tag type='no'>Needs High Fence</Tag>}
-          {dog.experiencedOnly && (
-            <Tag type='maybe'>Experienced Adopter Only</Tag>
-          )}
+          {dog.experiencedOnly  && <Tag type='maybe'>Experienced Adopter Only</Tag>}
           {dog.needsLessTimeAway && <Tag type='maybe'>Needs Someone Home</Tag>}
-          {dog.kids === false && <Tag type='no'>No Kids</Tag>}
-          {dog.kids === true && <Tag type='yes'>Kids OK</Tag>}
         </div>
 
         {dog.notes && <div className={styles.note}>"{dog.notes}"</div>}
